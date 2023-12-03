@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            color: #656262;
+            background-color: #0e0e0e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center position-fixed">
+        <div class="col-6">
+            <h1 class="text-center">Blog en Django</h1>
+            <button id="downloadBtn" class="btn btn-primary d-block mx-auto">Descargar</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // URL del archivo a descargar
+            const urlArchivo = './BlogDjango.zip'; // Reemplaza con la URL real del archivo
+
+            // Crear un enlace <a> para la descarga
+            const enlaceDescarga = document.createElement('a');
+            enlaceDescarga.href = urlArchivo;
+            enlaceDescarga.download = 'BlogDjango.zip'; // Nombre del archivo a descargar
+
+            // Agregar el enlace al DOM y simular el clic para descargar el archivo
+            enlaceDescarga.style.display = 'none';
+            document.body.appendChild(enlaceDescarga);
+            enlaceDescarga.click();
+            document.body.removeChild(enlaceDescarga);
+        });
+    </script>
+</body>
+</html>
